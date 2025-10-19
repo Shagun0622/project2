@@ -1,0 +1,176 @@
+@font-face {
+    font-family: 'Kajiro';
+    src: url('fonts/Kajiro.eot');
+    src: local('Kajiro'),
+         url('fonts/Kajiro.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Kajiro.woff2') format('woff2'),
+         url('fonts/Kajiro.woff') format('woff'),
+         url('fonts/Kajiro.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+#main {
+    width: 100%;
+    height: 100vh;
+}
+
+#back {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* hides any overflow caused by positioning */
+}
+
+#back img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 101%;          /* 1% extra to prevent subpixel gap */
+  height: 101%;         /* covers rounding errors */
+  object-fit: cover;
+  display: block;
+  border: none;
+  outline: none;
+}
+
+
+
+/* Ensure Shery.js canvas stays behind the text */
+#back canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* canvas behind everything */
+}
+
+/* #back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */
+
+#top {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1; /* above Shery.js canvas */
+}
+
+#workingarea {
+    position: relative;
+    margin: 0 auto;
+    width: 80%;
+    height: 100vh;
+    max-width: 1920px;
+}
+
+#nav {
+    width: 100%;
+    padding: 40px 0px;
+    display: flex;
+    align-items: center; /* fixed typo */
+    justify-content: space-between;
+}
+
+#nav img {
+    height: 60px;
+}
+
+#nleft, #nright {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+#nleft a, #nright a {
+    pointer-events: all; /* clickable */
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Gilroy', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#landingpage {
+    position: absolute;
+    top: 70%;
+    left: 0%;
+    display: flex;
+    justify-content: space-between;
+    transform: translate(0%, -50%);
+    width: 100%;
+}
+
+#landleft {
+    min-width: 50%;
+}
+
+#landright {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 25%;
+    color: white;
+    font-family: 'Gilroy', sans-serif;
+}
+
+#landleft .elem {
+    height: 10vw;
+    overflow: hidden;
+}
+
+#landleft .elem h1 {
+    line-height: .9;
+    font-family: 'Kajiro';
+    color: white;
+    font-weight: 100;
+    font-size: 10.5vw;
+}
+
+#landleft button {
+    pointer-events: all;
+    padding: .8vw 2.5vw;
+    font-size: 4vw;
+    font-family: 'Kajiro';
+    margin-top: 2vw;
+}
+
+#landright p {
+    font-size: 14px;
+    text-align: right;
+    font-weight: 300;
+}
+
+#landright #imagediv {
+    width: 100%;
+    height: 170px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    background-color: white;
+    background-image: url(https://images.unsplash.com/photo-1527203561188-dae1bc1a417f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjZ8fHBvcnRyYWl0fGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=500);
+    background-size: cover;
+    background-position: center;
+}
+
+#landright p:nth-child(3) {
+    margin-bottom: 100px;
+}
